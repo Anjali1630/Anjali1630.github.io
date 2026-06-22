@@ -1,16 +1,1114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Anjali Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjali | AI & Machine Learning Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-muted: #5a626a;
+            --accent: #2563eb;       
+            --accent-hover: #1d4ed8;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ededed;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 2px;
+            background-color: var(--text-main);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-color);
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            height: 40px;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cursor {
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .about-grid {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge i {
+            color: var(--accent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skills-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .skills-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skills-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+        }
+
+        .skills-card ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-card li {
+            background: var(--bg-light);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: #cbd5e1;
+        }
+
+        .project-info {
+            padding: 35px;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .project-brief {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 0.98rem;
+        }
+
+        .view-more {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .view-more {
+            color: var(--accent);
+            gap: 12px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -35px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            border: 3px solid var(--bg-light);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .timeline-content {
+            background: var(--bg-color);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+        }
+
+        .company {
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cert-icon {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .cert-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .issuer {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .edu-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .edu-card h3 { font-size: 1.3rem; }
+        .edu-card h4 { font-weight: 400; color: var(--text-muted); margin-top: 4px; }
+        .edu-gpa { background: rgba(37, 99, 235, 0.08); color: var(--accent); padding: 6px 14px; border-radius: 4px; font-weight: 600; }
+
+        .contact-wrapper {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover { color: var(--accent); }
+        .contact-item i { font-size: 1.3rem; color: var(--accent); }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content {
+            background-color: var(--bg-color);
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 650px;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            max-height: 85vh;
+            overflow-y: auto;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content { transform: translateY(0); }
+        .close-modal { position: absolute; top: 20px; right: 24px; font-size: 1.8rem; cursor: pointer; color: var(--text-muted); transition: var(--transition); }
+        .close-modal:hover { color: var(--text-main); }
+        .modal-body h2 { font-size: 1.8rem; margin-bottom: 8px; font-weight: 700; }
+        .modal-body .modal-tag { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; display: block; }
+        .modal-section { margin-bottom: 20px; }
+        .modal-section h4 { font-size: 1rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+        .modal-section p, .modal-section ul { color: var(--text-muted); font-size: 0.95rem; }
+        .modal-section ul { padding-left: 20px; }
+        .modal-tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+        .modal-tech-stack span { background-color: var(--bg-light); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; }
+
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--text-main);
+            color: white;
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 6px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        #backToTop:hover { background-color: var(--accent); }
+
+        .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) { .projects-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .nav-links { position: absolute; right: 0; height: 92vh; top: 70px; background-color: var(--bg-color); display: flex; flex-direction: column; align-items: center; width: 100%; transform: translateX(100%); transition: transform 0.4s ease-in; box-shadow: 0 10px 10px rgba(0,0,0,0.05); padding-top: 40px; }
+            .nav-links.nav-active { transform: translateX(0%); }
+            .burger { display: block; }
+            .burger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+            .burger.toggle .line2 { opacity: 0; }
+            .burger.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+            .hero h1 { font-size: 2.6rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .edu-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Hello, I'm Anjali </h1>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Anjali<span>.ai</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
 
-    <p>AI & Machine Learning Student</p>
+    <section id="home" class="hero">
+        <div class="hero-content scroll-reveal">
+            <h1>Hi, I'm <span class="highlight">Anjali</span></h1>
+            <h2>I am an <span id="typewriter"></span><span class="cursor">|</span></h2>
+            <p class="subtitle">Building AI-powered applications using Machine Learning, Generative AI, NLP and Intelligent Systems.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
+                <a href="https://github.com/Anjali1630" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/anjali-%E2%80%8E-18b0a4188" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </section>
 
-    <p>This is my first portfolio website.</p>
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">About Me</h2>
+            <div class="about-grid scroll-reveal">
+                <div class="about-text">
+                    <p>I am an ambitious <strong>Artificial Intelligence & Machine Learning undergraduate</strong> driven by the passion to solve real-world problems through intelligent automation. With hands-on experience developing and implementing software systems, I focus on the connection between data engineering and core AI development.</p>
+                    <p>As an <strong>ISRO project contributor</strong>, I currently work on an environmental monitoring venture utilizing LSTM time-series architectures and edge-computing infrastructure. My practical skillset spans building robust and modular <strong>Generative AI applications</strong>, creating custom semantic <strong>RAG tools</strong>, and deploying scalable backend services using <strong>FastAPI</strong>.</p>
+                    <div class="about-badges">
+                        <span class="badge"><i class="fa-solid fa-rocket"></i> ISRO Project Contributor</span>
+                        <span class="badge"><i class="fa-solid fa-brain"></i> GenAI & RAG Specialist</span>
+                        <span class="badge"><i class="fa-solid fa-server"></i> Production AI Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="skills" class="skills section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skills-card scroll-reveal">
+                    <h3><i class="fa-solid fa-code"></i> Programming</h3>
+                    <ul><li>Python</li><li>SQL</li><li>Java</li></ul>
+                </div>
+                <div class="skills-card scroll-reveal">
+                    <h3><i class="fa-solid fa-microchip"></i> AI / ML</h3>
+                    <ul><li>Generative AI</li><li>Prompt Engineering</li><li>RAG Systems</li><li>LLM Applications</li><li>NLP</li><li>Text-to-SQL</li><li>Anomaly Detection</li></ul>
+                </div>
+                <div class="skills-card scroll-reveal">
+                    <h3><i class="fa-solid fa-cubes"></i> Frameworks</h3>
+                    <ul><li>FastAPI</li><li>Streamlit</li><li>React</li><li>Scikit-learn</li><li>TensorFlow</li></ul>
+                </div>
+                <div class="skills-card scroll-reveal">
+                    <h3><i class="fa-solid fa-database"></i> Databases & MLOps</h3>
+                    <ul><li>PostgreSQL</li><li>SQLite</li><li>Docker</li></ul>
+                </div>
+                <div class="skills-card scroll-reveal">
+                    <h3><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</h3>
+                    <ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>REST APIs</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card scroll-reveal" data-project="isro">
+                    <div class="project-info">
+                        <span class="project-tag">ISRO Project</span>
+                        <h3>Air Quality Monitoring System</h3>
+                        <p class="project-brief">An edge-integrated LSTM forecasting pipeline built using verified environmental analytics frameworks.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-reveal" data-project="house">
+                    <div class="project-info">
+                        <span class="project-tag">Machine Learning</span>
+                        <h3>House Price Prediction System</h3>
+                        <p class="project-brief">An end-to-end regression application parsing high-dimensional geographic and demographic features.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-reveal" data-project="chatbot">
+                    <div class="project-info">
+                        <span class="project-tag">Natural Language Processing</span>
+                        <h3>AI-Powered Chatbot Platform</h3>
+                        <p class="project-brief">An intelligent neural network client processing conversational structures using core NLP embeddings.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-reveal" data-project="argus">
+                    <div class="project-info">
+                        <span class="project-tag">Anomaly Detection</span>
+                        <h3>Argus: AI Fraud Detection System</h3>
+                        <p class="project-brief">Advanced financial classification system engineered around real-time drift awareness models.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-reveal" data-project="reflexa">
+                    <div class="project-info">
+                        <span class="project-tag">Generative AI</span>
+                        <h3>Reflexa-AI: Self-Reflecting SQL Agent</h3>
+                        <p class="project-brief">An intelligent Text-to-SQL execution module evaluating schema trees with dynamic auto-correction loops.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card scroll-reveal" data-project="recommendation">
+                    <div class="project-info">
+                        <span class="project-tag">Data Science</span>
+                        <h3>Product Recommendation System</h3>
+                        <p class="project-brief">A hybrid optimization recommendation architecture deploying item TF-IDF matrix profiles.</p>
+                        <span class="view-more">View Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Professional Experience</h2>
+            <div class="timeline scroll-reveal">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Nov 2025 – Present</div>
+                    <div class="timeline-content">
+                        <h3>System Engineer & Data Analyst Intern</h3>
+                        <h4 class="company">ISRO (Indian Space Research Organisation)</h4>
+                        <p>Contributing directly within a collaborative development team to build edge-computing data tracking platforms and machine learning estimation pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications section-padding">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card scroll-reveal">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h3>Computer Graphics</h3>
+                        <p class="issuer">NPTEL</p>
+                    </div>
+                </div>
+                <div class="cert-card scroll-reveal">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h3>GenAI Powered Data Analytics</h3>
+                        <p class="issuer">TATA iQ Job Simulation (Forage)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Education</h2>
+            <div class="edu-card scroll-reveal">
+                <div class="edu-header">
+                    <div>
+                        <h3>Cambridge Institute of Technology</h3>
+                        <h4>Bachelor of Engineering in Artificial Intelligence & Machine Learning</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Graduation Year: 2026</p>
+                    </div>
+                    <div class="edu-gpa">CGPA: 7.89</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Get In Touch</h2>
+            <div class="contact-wrapper scroll-reveal">
+                <p class="contact-text">I am currently looking for full-time opportunities or exciting collaborations in AI/ML, NLP, and Generative AI development. Feel free to connect!</p>
+                <div class="contact-details">
+                    <a href="mailto:anjalijha2026@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>anjalijha2026@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/Anjali1630" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/Anjali1630</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anjali-%E2%80%8E-18b0a4188" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/in/anjali</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Anjali. Clean Architecture & Production Ready.</p>
+    </footer>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-data"></div>
+        </div>
+    </div>
+
+    <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script>
+        const projectData = {
+            isro: {
+                title: "AI-Powered Air Quality Monitoring System",
+                tag: "ISRO Project / Intern Venture",
+                overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
+                architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
+                features: [
+                    "Developed a hybrid LSTM time-series forecasting engine parsing environmental metrics.",
+                    "Deployed physics-validated output configurations tracking local regulatory compliance indices.",
+                    "Supported operational mathematical migrations from PINN modeling to deterministic Chemical Transport Models (CTM)."
+                ],
+                technologies: ["Python", "LSTM (TensorFlow)", "ESP32-S3", "Edge Computing", "Chemical Transport Models", "PostgreSQL"],
+                challenges: "Improving structural simulation accuracies across changing atmospheric layers. Addressed by deploying advanced operator splitting mechanisms within the CTM runtime framework."
+            },
+            house: {
+                title: "House Price Prediction System",
+                tag: "Core Machine Learning Workflow",
+                overview: "Constructed an end-to-end predictive machine learning algorithm parsing structural features out of the California Housing dataset to interpret market indicators.",
+                architecture: "Monolithic pipeline staging raw data acquisition, exploratory statistical testing (EDA), parameter normalization engineering, algorithm optimization, and feature importance visualization maps.",
+                features: [
+                    "Complete correlation matrix heatmap computations isolating median income bounds.",
+                    "Staged multi-variable statistical evaluations plotting actual values alongside evaluation lines.",
+                    "Clean feature distributions monitoring regional latitude and longitude clusters."
+                ],
+                technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+                challenges: "Handling multi-dimensional features without running into overfitting constraints. Solved by conducting strict variance and correlation analysis to prune low-impact attributes."
+            },
+            chatbot: {
+                title: "AI-Powered Chatbot Platform",
+                tag: "Natural Language Processing",
+                overview: "A beginner-friendly, performant interactive chat engine built to handle context identification and parse user intent statements smoothly.",
+                architecture: "Staged text parsing layers connected directly into a custom structured neural network architecture running vector token maps.",
+                features: [
+                    "Integrated text normalization pipelines translating user string parameters.",
+                    "Deep learning intent matching optimization routines utilizing a neural network structure.",
+                    "Modular configuration handling scalable response assets seamlessly."
+                ],
+                technologies: ["Python", "TensorFlow", "Keras", "NLP Tokens", "JSON Backend"],
+                challenges: "Ensuring accurate classification boundaries over ambiguous phrasing patterns. Resolved by introducing structured token preprocessing bags alongside dense neural network topologies."
+            },
+            argus: {
+                title: "Argus: AI-Powered Fraud Detection System",
+                tag: "Machine Learning Risk Platform",
+                overview: "Engineered an advanced anomaly tracking framework to process complex transaction sets and discover adversarial systemic financial fraud signatures.",
+                architecture: "Constructed with robust behavioral feature profiling tools paired alongside automated multi-tier information cleanup and ingestion frameworks.",
+                features: [
+                    "Identified unique financial transaction fingerprint irregularities using isolated feature parameters.",
+                    "Staged robust structural verification steps fixing empty fields or broken logs dynamically.",
+                    "Integrated active model divergence monitors to identify shifting fraud methods."
+                ],
+                technologies: ["Python", "Scikit-learn", "Anomaly Detection", "Data Engineering", "Docker", "PostgreSQL"],
+                challenges: "Model performance degradation due to evolving fraud styles over time. Mitigated by installing proactive data drift tracking routines into the pipeline."
+            },
+            reflexa: {
+                title: "Reflexa-AI: Self-Reflecting SQL Agent",
+                tag: "Generative AI Engineering",
+                overview: "Designed an intelligent database agent platform evaluating descriptive sentences to produce, run, and self-correct raw SQL strings.",
+                architecture: "Built with tight logical validation loops connecting semantic models to physical schema targets through structured iterative prompting paths.",
+                features: [
+                    "Engineered strong input defensive checkers isolating missing tables or broken metrics.",
+                    "Deployed self-correction frameworks identifying semantic compilation errors.",
+                    "Maximized generation accuracy metrics using feedback-driven prompting routines."
+                ],
+                technologies: ["Generative AI", "FastAPI", "Prompt Engineering", "SQL Agent Logic", "LLM Applications", "SQLite"],
+                challenges: "Preventing broken execution statements from disrupting downstream tasks. Resolved by installing autonomous query re-writing loops that step in upon identifying error flags."
+            },
+            recommendation: {
+                title: "Product Recommendation System",
+                tag: "Data Science Implementation",
+                overview: "Developed a hybrid recommendation engine providing personalized product search matches based on user interaction histories.",
+                architecture: "Two-stage recommendation routing combining textual data vector shapes and collaborative modeling logic.",
+                features: [
+                    "Integrated high-dimensional similarity matching utilizing TF-IDF token mappings.",
+                    "Deployed K-Nearest Neighbors mathematical structures matching closest profile matrices.",
+                    "Optimized computational feature scaling processes to support dataset growth."
+                ],
+                technologies: ["Python", "Scikit-learn", "TF-IDF Vectors", "Cosine Similarity", "KNN Routing", "Streamlit"],
+                challenges: "System latency spikes during large item comparisons. Handled by deploying optimized engineering transformations and matrix index mappings."
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const typewriterElement = document.getElementById("typewriter");
+            const phrases = ["AI & Machine Learning Engineer.", "GenAI Specialist.", "FastAPI Developer."];
+            let phraseIdx = 0;
+            let charIdx = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+
+            function typeEffect() {
+                const currentPhrase = phrases[phraseIdx];
+                if (isDeleting) {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIdx - 1);
+                    charIdx--;
+                    typingSpeed = 50;
+                } else {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIdx + 1);
+                    charIdx++;
+                    typingSpeed = 120;
+                }
+
+                if (!isDeleting && charIdx === currentPhrase.length) {
+                    isDeleting = true;
+                    typingSpeed = 2000; 
+                } else if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    typingSpeed = 500; 
+                }
+
+                setTimeout(typeEffect, typingSpeed);
+            }
+            typeEffect();
+
+            const burger = document.querySelector(".burger");
+            const navLinksContainer = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            burger.addEventListener("click", () => {
+                navLinksContainer.classList.toggle("nav-active");
+                burger.classList.toggle("toggle");
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinksContainer.classList.remove("nav-active");
+                    burger.classList.remove("toggle");
+                });
+            });
+
+            const sections = document.querySelectorAll("section");
+            const bttBtn = document.getElementById("backToTop");
+            
+            window.addEventListener("scroll", () => {
+                let currentSectionId = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.pageYOffset >= (sectionTop - 150)) {
+                        currentSectionId = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) {
+                        link.classList.add("active");
+                    }
+                });
+
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    bttBtn.style.display = "block";
+                } else {
+                    bttBtn.style.display = "none";
+                }
+            });
+
+            bttBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const revealElements = document.querySelectorAll(".scroll-reveal");
+            const revealOnScroll = () => {
+                revealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 75) {
+                        element.classList.add("visible");
+                    }
+                });
+            };
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+
+            const modal = document.getElementById("project-modal");
+            const modalDataContainer = document.getElementById("modal-data");
+            const closeModalBtn = document.querySelector(".close-modal");
+            const projectCards = document.querySelectorAll(".project-card");
+
+            projectCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const key = card.getAttribute("data-project");
+                    const data = projectData[key];
+                    
+                    if (data) {
+                        const featuresHtml = data.features.map(f => `<li>${f}</li>`).join("");
+                        const techHtml = data.technologies.map(t => `<span>${t}</span>`).join("");
+
+                        modalDataContainer.innerHTML = `
+                            <div class="modal-body">
+                                <h2>${data.title}</h2>
+                                <span class="modal-tag">${data.tag}</span>
+                                
+                                <div class="modal-section">
+                                    <h4>Overview</h4>
+                                    <p>${data.overview}</p>
+                                </div>
+                                
+                                <div class="modal-section">
+                                    <h4>Architecture</h4>
+                                    <p>${data.architecture}</p>
+                                </div>
+
+                                <div class="modal-section">
+                                    <h4>Key Features</h4>
+                                    <ul>${featuresHtml}</ul>
+                                </div>
+
+                                <div class="modal-section">
+                                    <h4>Technologies Used</h4>
+                                    <div class="modal-tech-stack">${techHtml}</div>
+                                </div>
+
+                                <div class="modal-section">
+                                    <h4>Challenges Solved</h4>
+                                    <p>${data.challenges}</p>
+                                </div>
+
+                                <div style="margin-top: 30px;">
+                                    <a href="https://github.com/Anjali1630" target="_blank" class="btn btn-primary">
+                                        <i class="fa-brands fa-github"></i> GitHub Repository
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        
+                        modal.classList.add("show");
+                        document.body.style.overflow = "hidden"; 
+                    }
+                });
+            });
+
+            const closeModalWindow = () => {
+                modal.classList.remove("show");
+                document.body.style.overflow = "auto";
+            };
+
+            closeModalBtn.addEventListener("click", closeModalWindow);
+            window.addEventListener("click", (e) => { if (e.target === modal) closeModalWindow(); });
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
