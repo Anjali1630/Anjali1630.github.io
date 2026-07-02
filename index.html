@@ -974,7 +974,6 @@
             isro: {
                 title: "AI-Powered Air Quality Monitoring System",
                 tag: "ISRO Project / Intern Venture",
-                link: "https://github.com/Anjali1630",
                 overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
                 architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
                 features: [
@@ -1160,11 +1159,13 @@
                                     <p>${data.challenges}</p>
                                 </div>
 
+                                ${data.link ? `
                                 <div style="margin-top: 30px;">
                                     <a href="${data.link}" target="_blank" class="btn btn-primary">
                                         <i class="fa-brands fa-github"></i> GitHub Repository
                                     </a>
                                 </div>
+                                ` : ''}
                             </div>
                         `;
                         
