@@ -792,7 +792,7 @@
                         <span class="project-tag">ISRO Project</span>
                         <h3>Air Quality Monitoring System</h3>
                         <p class="project-brief">An edge-integrated LSTM forecasting pipeline built to monitor multi-variate environmental datasets.</p>
-                    
+                        <span class="view-more">View Architecture & Code <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
 
@@ -1007,6 +1007,20 @@
                 technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
                 challenges: "Handling multi-dimensional features without running into overfitting constraints. Solved by conducting strict variance and correlation analysis to prune low-impact attributes."
             },
+            paperpilot: {
+                title: "PaperPilot.ai",
+                tag: "Generative AI Engineering",
+                link: "https://github.com/Anjali1630", 
+                overview: "Developed an advanced LLM-powered document assistant designed to help researchers and students seamlessly ingest, query, and extract insights from dense academic papers.",
+                architecture: "Constructed a highly efficient Retrieval-Augmented Generation (RAG) pipeline, linking vector embeddings to a custom FastAPI backend for rapid semantic search and contextual retrieval.",
+                features: [
+                    "Engineered automated text summarization and dynamic key-point extraction.",
+                    "Deployed semantic search capabilities across high-volume PDF documents.",
+                    "Integrated a conversational interface for real-time Q&A grounded exclusively in the uploaded document's context."
+                ],
+                technologies: ["Python", "FastAPI", "LLMs", "RAG Systems", "Vector Embeddings", "NLP"],
+                challenges: "Processing extensive document contexts without breaching strict LLM token limits. Mitigated by engineering an optimized text-chunking and overlapping retrieval protocol."
+            },
             chatbot: {
                 title: "AI-Powered Chatbot Platform",
                 tag: "Natural Language Processing",
@@ -1167,7 +1181,7 @@
                                     <h4>Challenges Solved</h4>
                                     <p>${data.challenges}</p>
                                 </div>
-
+                                
                                 ${data.link ? `
                                 <div style="margin-top: 30px;">
                                     <a href="${data.link}" target="_blank" class="btn btn-primary">
