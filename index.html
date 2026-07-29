@@ -831,12 +831,13 @@
                         <span class="view-more">View Architecture & Code <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-
-                <div class="project-card scroll-reveal" data-project="reflexa">
+                
+                <!-- Replaced Reflexa with Datasage -->
+                <div class="project-card scroll-reveal" data-project="datasage">
                     <div class="project-info">
-                        <span class="project-tag">Generative AI</span>
-                        <h3>Reflexa-AI: Self-Reflecting SQL Agent</h3>
-                        <p class="project-brief">An intelligent Text-to-SQL module implementing dynamic programmatic reflection loops.</p>
+                        <span class="project-tag">Full-Stack AI Engineering</span>
+                        <h3>Datasage: AI Conversational Analytics Platform</h3>
+                        <p class="project-brief">A full-stack analytics platform that queries structured databases and documents using natural language and local LLMs.</p>
                         <span class="view-more">View Architecture & Code <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
@@ -1089,27 +1090,16 @@
                 title: "Datasage: AI Conversational Analytics Platform",
                 tag: "Full-Stack AI Engineering",
                 link: "https://github.com/Anjali1630/Datasage",
-                overview: "Built an AI-powered conversational analytics platform that enables users to query PostgreSQL databases and unstructured documents using natural language through a unified chat interface.",
-                architecture: "Designed a modular FastAPI backend with pluggable data sources, Gemini-powered Text-to-SQL generation, semantic document search, and a React dashboard featuring conversational analytics, query history, and interactive result visualization.",
+                overview: "A full-stack AI analytics platform that enables users to query structured databases and unstructured documents using natural language. It determines whether queries require SQL, document retrieval, or hybrid search, running entirely on locally hosted LLMs via Ollama.",
+                architecture: "Built with a React frontend and FastAPI backend. The intelligent Query Engine routes requests between an Ollama LLM (for semantic document search) and PostgreSQL/SQLite databases (for SQL execution).",
                 features: [
-                    "Implemented Natural Language → SQL generation with automatic schema discovery and SQL validation.",
-                    "Developed hybrid querying across PostgreSQL databases and uploaded PDF, DOCX, CSV, Excel, and TXT files.",
-                    "Built a modern React dashboard with chat interface, SQL syntax highlighting, sortable tables, query history, dark mode, and CSV/Excel export."
+                    "Natural Language to SQL conversion with automatic validation and read-only execution.",
+                    "Intelligent query classification into SQL, Document, or Hybrid search modes.",
+                    "Dynamic schema discovery automatically mapping tables, primary keys, and foreign keys.",
+                    "Automated document intelligence (parsing, chunking, embedding) for PDF, DOCX, TXT, CSV, and XLSX."
                 ],
-                technologies: [
-                    "Python",
-                    "FastAPI",
-                    "React",
-                    "PostgreSQL",
-                    "SQLite",
-                    "Google Gemini API",
-                    "SQLAlchemy",
-                    "Docker",
-                    "JavaScript",
-                    "HTML",
-                    "CSS"
-                ],
-                challenges: "Ensuring reliable AI-generated SQL while supporting multiple data sources. Solved by implementing schema-aware SQL validation, request-level error handling, structured logging, and a hybrid query engine capable of combining structured database results with semantic document retrieval."
+                technologies: ["Python", "FastAPI", "React", "Ollama", "PostgreSQL", "SQLite", "LangChain", "Docker"],
+                challenges: "Ensuring accurate data retrieval across diverse sources without relying on external cloud APIs. Solved by integrating locally hosted LLMs (Llama 3/Mistral/Qwen) through Ollama for complete privacy and offline accessibility."
             },
             recommendation: {
                 title: "Product Recommendation System",
