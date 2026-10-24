@@ -133,7 +133,7 @@
         .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; position: relative; z-index: 1; }
         .hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; line-height: 1.1; color: var(--bg-color); }
         .hero h1 span { color: var(--accent); }
-        .hero h2 { font-size: 1.4rem; font-weight: 600; color: var(--bg-light); margin-bottom: 20px; letter-spacing: 0.02em; }
+        .hero h2 { font-size: 1.3rem; font-weight: 600; color: var(--bg-light); margin-bottom: 24px; letter-spacing: 0.02em; line-height: 1.4; }
         .subtitle { font-size: 1.1rem; color: #A0AEC0; margin-bottom: 30px; max-width: 680px; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -424,7 +424,7 @@
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
-                
+
                 <div class="project-card scroll-reveal" data-project="isro">
                     <div class="project-info">
                         <span class="project-tag">Episode 5: Edge Computing</span>
@@ -466,13 +466,13 @@
                     <div class="timeline-date">July 2026 – October 2026</div>
                     <div class="timeline-content">
                         <h3>AI Intern</h3>
-                        <h4 class="company">The Entrepreneurship Network (Remote)</h4>
+                        <h4 class="company">The Entrepreneurship Network</h4>
                         <ul>
-                            <li>Architected and shipped production-grade AI systems, including a Dockerized Text-to-SQL conversational analytics engine using Ollama.</li>
-                            <li>Developed a full-stack React and FastAPI app with a pluggable abstraction for unified PostgreSQL and SQLite integration.</li>
-                            <li>Built a dynamic schema-discovery system for runtime introspection of CSV/XLSX file uploads.</li>
-                            <li>Designed a hybrid classifier routing user queries to Text-to-SQL, vector search, or dual-execution workflows.</li>
+                            <li>Worked on five AI projects under Scrum Master guidance, spanning analytics, AI security, automation, and intelligent applications.</li>
+                            <li>Applied AI and analytical techniques across natural-language-to-SQL, LLM security testing, intelligent browser automation, graph neural networks, and semantic search.</li>
+                            <li>Strengthened practical skills in AI system development, data workflows, problem-solving, and cross-functional communication.</li>
                         </ul>
+                        <p style="margin-top: 10px; font-style: italic; color: var(--accent); font-weight: bold;">Five projects. One legendary learning curve.</p>
                     </div>
                 </div>
                 
@@ -480,9 +480,16 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Nov 2025 – July 2026</div>
                     <div class="timeline-content">
-                        <h3>System Engineer & Data Analyst Intern</h3>
-                        <h4 class="company">ISRO (Indian Space Research Organisation)</h4>
-                        <p>Contributing directly within an engineering development team to build predictive edge-monitoring data platforms and time-series pipelines. Deployed operational Chemical Transport Models (CTM) using operator splitting matrices to secure optimization benchmarks.</p>
+                        <h3>Air Quality Monitoring System (AQMS)</h3>
+                        <h4 class="company">IoT · Edge AI · Data Analytics</h4>
+                        <ul>
+                            <li>Worked on an IoT-based air quality monitoring system integrating sensors, edge computing, and cloud analytics.</li>
+                            <li>Explored system architecture using ESP32, Raspberry Pi, and AWS microservices for real-time environmental data processing.</li>
+                            <li>Worked with air quality data and a hybrid CNN-LSTM model for time-series forecasting.</li>
+                            <li>Explored end-to-end data flow from sensor collection to cloud-based analytics, targeting telemetry delays below five seconds.</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-weight: 600; font-size: 0.9rem; color: var(--text-main);">Key Skills: Data Analysis · System Architecture · IoT · Edge AI · Predictive Analytics</p>
+                        <p style="margin-top: 5px; font-style: italic; color: var(--accent); font-weight: bold;">Every data point tells a story.</p>
                     </div>
                 </div>
 
@@ -625,7 +632,7 @@
     <script>
         const projectData = {
             merchantmirror: {
-                title: "MerchantMirror: The One with Revenue Recovery",
+                title: "MerchantMirror: AI-Powered Merchant Revenue Recovery",
                 tag: "Episode 1: AI Agents and Intelligent Payment Analytics",
                 link: "https://github.com/Anjali1630/MerchantMirror",
                 overview: "Developed an AI-powered revenue recovery platform that analyzes failed payments to identify merchant configuration issues before contacting customers. It combines statistical analysis with an automated recovery agent to recommend configuration fixes or simulate customer recovery actions.",
@@ -641,7 +648,7 @@
                 challenges: "Distinguishing configuration-related payment failures from customer-related failures. Addressed by using an explainable statistical attribution engine before routing unresolved cases to the recovery agent. All recovery actions are simulated rather than executed against real payments."
             },
             doorman: {
-                title: "Doorman: The One with the Intelligent Agent",
+                title: "Doorman: Intelligent Browser Automation Agent",
                 tag: "Episode 2: AI Agents and Browser Automation",
                 link: "https://github.com/Anjali1630/doorman",
                 overview: "Developed an intelligent browser automation agent that executes natural-language tasks by prioritizing available APIs and falling back to Playwright browser automation when necessary. It validates planned actions against the live webpage before execution to improve reliability and prevent interactions with nonexistent elements.",
@@ -658,7 +665,7 @@
                 challenges: "Making browser automation reliable when an AI-generated plan refers to elements that may not exist or when an API is unavailable. Addressed through live DOM validation, API availability checks and fallback planning."
             },
             netgraph: {
-                title: "NetGraph: The One with Network Intrusion Detection",
+                title: "NetGraph: Real-Time Network Intrusion Detection",
                 tag: "Episode 3: Graph Machine Learning and Cybersecurity",
                 link: "https://github.com/Anjali1630/NetGraph",
                 overview: "Developed a network intrusion detection system that represents network traffic as graphs, with devices as nodes and network flows as edges. Trained and evaluated Graph Neural Network models using the CIC-IDS2017 dataset to identify malicious traffic patterns and compared their performance with conventional machine learning approaches.",
@@ -675,7 +682,7 @@
                 challenges: "Transforming network flow records into meaningful graph structures while handling dataset inconsistencies, timestamp resolution and large-scale traffic data. Addressed through data-cleaning procedures, graph-window construction and evaluation using real CIC-IDS2017 traffic."
             },
             datasage: {
-                title: "Datasage: The One with Conversational Analytics",
+                title: "Datasage: AI Conversational Analytics Platform",
                 tag: "Episode 4: Full-Stack AI Engineering",
                 link: "https://github.com/Anjali1630/Datasage",
                 overview: "A full-stack AI analytics platform that enables users to query structured databases and unstructured documents using natural language. It determines whether queries require SQL, document retrieval, or hybrid search, running entirely on locally hosted LLMs via Ollama.",
@@ -690,20 +697,20 @@
                 challenges: "Ensuring accurate data retrieval across diverse sources without relying on external cloud APIs. Solved by integrating locally hosted LLMs (Llama 3/Mistral/Qwen) through Ollama for complete privacy and offline accessibility."
             },
             isro: {
-                title: "ISRO Pipeline: The One with Air Quality Monitoring",
-                tag: "Episode 5: ISRO Project / Intern Venture",
-                overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
-                architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
+                title: "AI-Powered Air Quality Monitoring System",
+                tag: "Episode 5: Edge AI Data Analytics",
+                overview: "Contributed to an IoT-based edge-computing air quality monitoring framework.",
+                architecture: "Integrated hardware layers using ESP32-S3 and Raspberry Pi edge devices communicating via structural I2C and UART bridges to provide robust real-time sensor data ingestion into AWS cloud microservices.",
                 features: [
-                    "Developed a hybrid LSTM time-series forecasting engine parsing environmental metrics.",
-                    "Deployed physics-validated output configurations tracking local regulatory compliance indices.",
-                    "Supported operational mathematical migrations from PINN modeling to deterministic Chemical Transport Models (CTM)."
+                    "Developed a hybrid CNN-LSTM time-series forecasting engine parsing environmental metrics.",
+                    "Explored real-time end-to-end data flow targeting telemetry delays below five seconds.",
+                    "Supported operational evaluations using telemetry and environmental datasets."
                 ],
-                technologies: ["Python", "LSTM (TensorFlow)", "ESP32-S3", "Edge Computing", "Chemical Transport Models", "PostgreSQL"],
-                challenges: "Improving structural simulation accuracies across changing atmospheric layers. Addressed by deploying advanced operator splitting mechanisms within the CTM runtime framework."
+                technologies: ["Python", "LSTM", "CNN", "ESP32", "Raspberry Pi", "AWS", "IoT"],
+                challenges: "Handling real-time data ingestion while avoiding major telemetry delays. Addressed by optimizing the data processing flows across edge nodes."
             },
             paperpilot: {
-                title: "PaperPilot.ai: The One with the RAG Assistant",
+                title: "PaperPilot.ai",
                 tag: "Episode 6: Generative AI Engineering",
                 link: "https://github.com/Anjali1630", 
                 overview: "Developed an advanced LLM-powered document assistant designed to help researchers and students seamlessly ingest, query, and extract insights from dense academic papers.",
@@ -717,7 +724,7 @@
                 challenges: "Processing extensive document contexts without breaching strict LLM token limits. Mitigated by engineering an optimized text-chunking and overlapping retrieval protocol."
             },
             argus: {
-                title: "Argus: The One with Fraud Detection",
+                title: "Argus: AI-Powered Fraud Detection System",
                 tag: "Episode 7: Machine Learning Risk Platform",
                 link: "https://github.com/Anjali1630",
                 overview: "Engineered an advanced anomaly tracking framework to process complex transaction sets and discover adversarial systemic financial fraud signatures.",
