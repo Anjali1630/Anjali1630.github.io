@@ -133,7 +133,7 @@
         .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; position: relative; z-index: 1; }
         .hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; line-height: 1.1; color: var(--bg-color); }
         .hero h1 span { color: var(--accent); }
-        .hero h2 { font-size: 1.3rem; font-weight: 600; color: var(--bg-light); margin-bottom: 24px; letter-spacing: 0.02em; line-height: 1.4; }
+        .hero h2 { font-size: 1.4rem; font-weight: 600; color: var(--bg-light); margin-bottom: 20px; letter-spacing: 0.02em; }
         .subtitle { font-size: 1.1rem; color: #A0AEC0; margin-bottom: 30px; max-width: 680px; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -237,7 +237,7 @@
         .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* Fixed Easter Egg Toast Notification */
+        /* Fixed Easter Egg Toast Notification - Mobile Friendly */
         #legendary-toast {
             position: fixed; bottom: -150px; left: 50%; transform: translateX(-50%); 
             background-color: var(--text-main); color: var(--accent); 
@@ -247,8 +247,9 @@
             border: 2px solid var(--accent); z-index: 3000; 
             transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             white-space: normal; text-align: center; width: max-content; max-width: 90vw;
+            visibility: hidden; opacity: 0; pointer-events: none;
         }
-        #legendary-toast.show { bottom: 40px; }
+        #legendary-toast.show { bottom: 40px; visibility: visible; opacity: 1; pointer-events: auto; }
 
         @media (max-width: 992px) { 
             .projects-grid { grid-template-columns: 1fr; }
@@ -423,10 +424,19 @@
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
+                
+                <div class="project-card scroll-reveal" data-project="isro">
+                    <div class="project-info">
+                        <span class="project-tag">Episode 5: Edge Computing</span>
+                        <h3>ISRO Pipeline: The One with Air Quality Monitoring</h3>
+                        <p class="project-brief">An edge-integrated LSTM forecasting pipeline built to monitor multi-variate environmental datasets.</p>
+                        <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
 
                 <div class="project-card scroll-reveal" data-project="paperpilot">
                    <div class="project-info">
-                        <span class="project-tag">Episode 5: RAG Systems</span>
+                        <span class="project-tag">Episode 6: RAG Systems</span>
                         <h3>PaperPilot.ai: The One with the RAG Assistant</h3>
                         <p class="project-brief">An intelligent document analysis platform utilizing Retrieval-Augmented Generation (RAG) to dynamically query academic papers.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
@@ -435,7 +445,7 @@
 
                 <div class="project-card scroll-reveal" data-project="argus">
                     <div class="project-info">
-                        <span class="project-tag">Episode 6: Anomaly Detection</span>
+                        <span class="project-tag">Episode 7: Anomaly Detection</span>
                         <h3>Argus: The One with Fraud Detection</h3>
                         <p class="project-brief">Advanced financial classification architecture engineered around transaction validation logs.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
@@ -463,6 +473,16 @@
                             <li>Built a dynamic schema-discovery system for runtime introspection of CSV/XLSX file uploads.</li>
                             <li>Designed a hybrid classifier routing user queries to Text-to-SQL, vector search, or dual-execution workflows.</li>
                         </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Nov 2025 – July 2026</div>
+                    <div class="timeline-content">
+                        <h3>System Engineer & Data Analyst Intern</h3>
+                        <h4 class="company">ISRO (Indian Space Research Organisation)</h4>
+                        <p>Contributing directly within an engineering development team to build predictive edge-monitoring data platforms and time-series pipelines. Deployed operational Chemical Transport Models (CTM) using operator splitting matrices to secure optimization benchmarks.</p>
                     </div>
                 </div>
 
@@ -669,9 +689,22 @@
                 technologies: ["Python", "FastAPI", "React", "Ollama", "PostgreSQL", "SQLite", "LangChain", "Docker"],
                 challenges: "Ensuring accurate data retrieval across diverse sources without relying on external cloud APIs. Solved by integrating locally hosted LLMs (Llama 3/Mistral/Qwen) through Ollama for complete privacy and offline accessibility."
             },
+            isro: {
+                title: "ISRO Pipeline: The One with Air Quality Monitoring",
+                tag: "Episode 5: ISRO Project / Intern Venture",
+                overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
+                architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
+                features: [
+                    "Developed a hybrid LSTM time-series forecasting engine parsing environmental metrics.",
+                    "Deployed physics-validated output configurations tracking local regulatory compliance indices.",
+                    "Supported operational mathematical migrations from PINN modeling to deterministic Chemical Transport Models (CTM)."
+                ],
+                technologies: ["Python", "LSTM (TensorFlow)", "ESP32-S3", "Edge Computing", "Chemical Transport Models", "PostgreSQL"],
+                challenges: "Improving structural simulation accuracies across changing atmospheric layers. Addressed by deploying advanced operator splitting mechanisms within the CTM runtime framework."
+            },
             paperpilot: {
                 title: "PaperPilot.ai: The One with the RAG Assistant",
-                tag: "Episode 5: Generative AI Engineering",
+                tag: "Episode 6: Generative AI Engineering",
                 link: "https://github.com/Anjali1630", 
                 overview: "Developed an advanced LLM-powered document assistant designed to help researchers and students seamlessly ingest, query, and extract insights from dense academic papers.",
                 architecture: "Constructed a highly efficient Retrieval-Augmented Generation (RAG) pipeline, linking vector embeddings to a custom FastAPI backend for rapid semantic search and contextual retrieval.",
@@ -685,7 +718,7 @@
             },
             argus: {
                 title: "Argus: The One with Fraud Detection",
-                tag: "Episode 6: Machine Learning Risk Platform",
+                tag: "Episode 7: Machine Learning Risk Platform",
                 link: "https://github.com/Anjali1630",
                 overview: "Engineered an advanced anomaly tracking framework to process complex transaction sets and discover adversarial systemic financial fraud signatures.",
                 architecture: "Constructed with robust behavioral feature profiling tools paired alongside automated multi-tier information cleanup and ingestion frameworks.",
