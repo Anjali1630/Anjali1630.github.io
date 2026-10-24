@@ -133,7 +133,7 @@
         .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; position: relative; z-index: 1; }
         .hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; line-height: 1.1; color: var(--bg-color); }
         .hero h1 span { color: var(--accent); }
-        .hero h2 { font-size: 1.4rem; font-weight: 600; color: var(--bg-light); margin-bottom: 20px; letter-spacing: 0.02em; }
+        .hero h2 { font-size: 1.3rem; font-weight: 600; color: var(--bg-light); margin-bottom: 24px; letter-spacing: 0.02em; line-height: 1.4; }
         .subtitle { font-size: 1.1rem; color: #A0AEC0; margin-bottom: 30px; max-width: 680px; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
@@ -174,7 +174,7 @@
         .featured-badge { position: absolute; top: 16px; right: 16px; background: var(--secondary); color: white; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.05em; }
         .project-info { padding: 30px; }
         .project-tag { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--danger); display: inline-block; margin-bottom: 12px; }
-        .project-card h3 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; line-height: 1.3; color: var(--text-main); }
+        .project-card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 800; line-height: 1.3; color: var(--text-main); }
         .project-brief { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; }
         .view-more { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: var(--secondary); display: inline-flex; align-items: center; gap: 8px; }
         .project-card:hover .view-more { color: var(--accent-hover); }
@@ -237,8 +237,16 @@
         .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
+        /* Fixed Easter Egg Toast Notification */
         #legendary-toast {
-            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background-color: var(--text-main); color: var(--accent); padding: 20px 40px; border-radius: 8px; font-size: 1.5rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--accent); z-index: 3000; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: fixed; bottom: -150px; left: 50%; transform: translateX(-50%); 
+            background-color: var(--text-main); color: var(--accent); 
+            padding: 16px 32px; border-radius: 8px; 
+            font-size: 1.2rem; font-weight: 900; letter-spacing: 0.1em; 
+            text-transform: uppercase; box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            border: 2px solid var(--accent); z-index: 3000; 
+            transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            white-space: normal; text-align: center; width: max-content; max-width: 90vw;
         }
         #legendary-toast.show { bottom: 40px; }
 
@@ -260,6 +268,7 @@
             .hero h1 { font-size: 2.4rem; }
             .hero h2 { font-size: 1.2rem; }
             .section-padding { padding: 60px 0; }
+            #legendary-toast { font-size: 1rem; padding: 12px 20px; }
         }
     </style>
 </head>
@@ -270,12 +279,12 @@
             <a href="#home" class="logo">Anjali<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">The Story</a></li>
-                <li><a href="#skills" class="nav-link">Arsenal</a></li>
-                <li><a href="#projects" class="nav-link">The Playbook</a></li>
-                <li><a href="#experience" class="nav-link">Timeline</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#leadership" class="nav-link">Leadership</a></li>
-                <li><a href="#certifications" class="nav-link">Certs</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -292,18 +301,18 @@
             <div class="hero-grid scroll-reveal">
                 <div class="hero-text">
                     <h1>Hi, I'm <span>Anjali</span>.</h1>
+                    <h2 style="font-size: 1.6rem; color: var(--bg-color); line-height: 1.2; margin-bottom: 5px;">Suit up for some intelligent ideas.</h2>
                     <h2>AI & Machine Learning Undergraduate <i class="fa-solid fa-umbrella" style="color: var(--accent); margin-left:8px;"></i></h2>
-                    <p class="subtitle">I am an AI & Machine Learning intern with a CGPA of 8.0. I design and deploy end-to-end predictive pipelines, self-correcting automation logic, and hardware-integrated data intelligence systems. Challenge Accepted.</p>
+                    <p class="subtitle">I'm building my story at the intersection of AI, data, and problem-solving. From intelligent automation to predictive analytics, I enjoy turning messy problems into meaningful solutions.<br><br>Aspiring AI Engineer, Data Analyst, and Business Analyst — currently collecting skills, building projects, and figuring out what makes technology truly useful.<br><br><em style="color: var(--accent);">Because great ideas deserve a legendary execution.</em></p>
                     <div class="hero-buttons">
-                        <a href="Anjaliresume.pdf" download="Anjali_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Suit Up (Resume)</a>
+                        <a href="Anjaliresume.pdf" download="Anjali_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
                         <a href="https://github.com/Anjali1630" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/anjali-%E2%80%8E-18b0a4188" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="#contact" class="btn btn-secondary">Meet Me</a>
+                        <a href="#contact" class="btn btn-secondary">Connect</a>
                     </div>
                 </div>
                 <div class="avatar-container">
-                    <!-- Removed error-looping attribute -->
-                    <img class="profile-avatar" src="profile.jpg" alt="Anjali Profile Photo">
+                    <img class="profile-avatar" src="profile.jpg" alt="Anjali Profile Photo" onerror="this.onerror=null; this.src='https://via.placeholder.com/280x280?text=Profile+Photo';">
                 </div>
             </div>
         </div>
@@ -311,16 +320,18 @@
 
     <section id="about" class="about section-padding">
         <div class="container">
-            <h2 class="section-title scroll-reveal"><i class="fa-solid fa-book-open horn-icon"></i> The Story of How I Became an AI Engineer</h2>
+            <h2 class="section-title scroll-reveal"><i class="fa-solid fa-book-open horn-icon"></i> The Story Behind the Code</h2>
             <div class="about-grid scroll-reveal">
                 <div class="about-text">
-                    <p>I am an Artificial Intelligence & Machine Learning undergraduate passionate about building intelligent systems that solve real-world problems through data, algorithms, and automation. My interests span machine learning, deep learning, predictive analytics, natural language processing, recommendation systems, and intelligent software development.</p>
-                    <p>I enjoy transforming complex datasets into meaningful insights and developing scalable solutions that combine analytical thinking with practical engineering. Through academic and personal projects, I have gained experience in designing machine learning models, developing AI-powered applications, and building end-to-end software systems.</p>
-                    <p>I am continuously exploring emerging technologies in AI and data science while strengthening my problem-solving, research, and software engineering skills to create impactful and innovative solutions.</p>
+                    <p>I'm an Artificial Intelligence & Machine Learning undergraduate who enjoys exploring how technology, data, and business thinking can come together to solve real-world problems.</p>
+                    <p>Like every good HIMYM episode, every project starts with a question. I enjoy following that question through data analysis, predictive modelling, intelligent automation, and AI-powered applications — learning something new with every iteration.</p>
+                    <p>My interests span AI engineering, machine learning, data analytics, business intelligence, and translating technical insights into practical decisions. I enjoy both the <em>how</em> behind a system and the <em>why</em> behind the problem it solves.</p>
+                    <p>I'm continuously building my skills through hands-on projects, experimenting with new technologies, and learning to connect analytical thinking with real-world impact.</p>
+                    <p><strong>Current chapter:</strong> Building smarter solutions, one project at a time. The story is still unfolding.</p>
                     <div class="about-badges">
-                        <span class="badge"><i class="fa-solid fa-rocket"></i> ISRO Contributor</span>
-                        <span class="badge"><i class="fa-solid fa-brain"></i> Predictive Modeling</span>
-                        <span class="badge"><i class="fa-solid fa-code-branch"></i> Scalable Solutions</span>
+                        <span class="badge"><i class="fa-solid fa-brain"></i> AI & Intelligent Systems</span>
+                        <span class="badge"><i class="fa-solid fa-chart-pie"></i> Data & Business Insights</span>
+                        <span class="badge"><i class="fa-solid fa-lightbulb"></i> Automation & Problem-Solving</span>
                     </div>
                 </div>
             </div>
@@ -331,34 +342,42 @@
         <div class="container">
             <h2 class="section-title scroll-reveal">My Arsenal (Technical Skills)</h2>
             <div class="skills-grid">
+                
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-code"></i> Languages</h3>
                     <ul><li>Python</li><li>SQL</li><li>Java</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-brain"></i> AI/ML & GenAI</h3>
                     <ul><li>LLM Applications</li><li>RAG</li><li>Text-to-SQL Systems</li><li>NLP</li><li>Prompt Engineering</li><li>Anomaly Detection</li><li>Feature Engineering</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-cubes"></i> Frameworks & Libs</h3>
                     <ul><li>FastAPI</li><li>React</li><li>Streamlit</li><li>Scikit-learn</li><li>TensorFlow</li><li>XGBoost</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-database"></i> DB & Vector Stores</h3>
                     <ul><li>PostgreSQL</li><li>SQLite</li><li>FAISS</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-server"></i> MLOps & Infra</h3>
                     <ul><li>Docker</li><li>Airflow</li><li>MLflow</li><li>Redis</li><li>Feast</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-tools"></i> Tools</h3>
                     <ul><li>Git</li><li>GitHub</li><li>VS Code</li></ul>
                 </div>
+
                 <div class="skills-card scroll-reveal">
                     <h3><i class="fa-solid fa-users"></i> Soft Skills</h3>
                     <ul><li>Analytical Thinking</li><li>Research & Documentation</li><li>Teamwork</li><li>Leadership</li></ul>
                 </div>
+
             </div>
         </div>
     </section>
@@ -372,7 +391,7 @@
                     <span class="featured-badge">Revenue Recovery</span>
                     <div class="project-info">
                         <span class="project-tag">Episode 1: AI Agents</span>
-                        <h3>The One with Merchant Revenue Recovery</h3>
+                        <h3>MerchantMirror: The One with Revenue Recovery</h3>
                         <p class="project-brief">An AI-powered revenue recovery platform that analyzes failed payments to identify merchant configuration issues before contacting customers.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -381,7 +400,7 @@
                 <div class="project-card scroll-reveal" data-project="doorman">
                     <div class="project-info">
                         <span class="project-tag">Episode 2: Browser Automation</span>
-                        <h3>The One with the Intelligent Agent (Doorman)</h3>
+                        <h3>Doorman: The One with the Intelligent Agent</h3>
                         <p class="project-brief">An intelligent browser automation agent that executes natural-language tasks by prioritizing available APIs and falling back to Playwright.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -390,7 +409,7 @@
                 <div class="project-card scroll-reveal" data-project="netgraph">
                     <div class="project-info">
                         <span class="project-tag">Episode 3: Cybersecurity</span>
-                        <h3>The One with Network Intrusion Detection</h3>
+                        <h3>NetGraph: The One with Network Intrusion Detection</h3>
                         <p class="project-brief">A network intrusion detection system representing network traffic as graphs, evaluated using Graph Neural Network models.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -399,25 +418,16 @@
                 <div class="project-card scroll-reveal" data-project="datasage">
                     <div class="project-info">
                         <span class="project-tag">Episode 4: Full-Stack AI</span>
-                        <h3>The One with Conversational Analytics</h3>
+                        <h3>Datasage: The One with Conversational Analytics</h3>
                         <p class="project-brief">A full-stack analytics platform that queries structured databases and documents using natural language and local LLMs.</p>
-                        <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal" data-project="isro">
-                    <div class="project-info">
-                        <span class="project-tag">Episode 5: Edge Computing</span>
-                        <h3>The One with the ISRO Pipeline</h3>
-                        <p class="project-brief">An edge-integrated LSTM forecasting pipeline built to monitor multi-variate environmental datasets.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </div>
 
                 <div class="project-card scroll-reveal" data-project="paperpilot">
                    <div class="project-info">
-                        <span class="project-tag">Episode 6: RAG Systems</span>
-                        <h3>The One with the RAG Assistant</h3>
+                        <span class="project-tag">Episode 5: RAG Systems</span>
+                        <h3>PaperPilot.ai: The One with the RAG Assistant</h3>
                         <p class="project-brief">An intelligent document analysis platform utilizing Retrieval-Augmented Generation (RAG) to dynamically query academic papers.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -425,8 +435,8 @@
 
                 <div class="project-card scroll-reveal" data-project="argus">
                     <div class="project-info">
-                        <span class="project-tag">Episode 7: Anomaly Detection</span>
-                        <h3>The One with Fraud Detection</h3>
+                        <span class="project-tag">Episode 6: Anomaly Detection</span>
+                        <h3>Argus: The One with Fraud Detection</h3>
                         <p class="project-brief">Advanced financial classification architecture engineered around transaction validation logs.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -453,16 +463,6 @@
                             <li>Built a dynamic schema-discovery system for runtime introspection of CSV/XLSX file uploads.</li>
                             <li>Designed a hybrid classifier routing user queries to Text-to-SQL, vector search, or dual-execution workflows.</li>
                         </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Nov 2025 – July 2026</div>
-                    <div class="timeline-content">
-                        <h3>System Engineer & Data Analyst Intern</h3>
-                        <h4 class="company">ISRO (Indian Space Research Organisation)</h4>
-                        <p>Contributing directly within an engineering development team to build predictive edge-monitoring data platforms and time-series pipelines. Deployed operational Chemical Transport Models (CTM) using operator splitting matrices to secure optimization benchmarks.</p>
                     </div>
                 </div>
 
@@ -572,7 +572,7 @@
 
     <section id="contact" class="contact section-padding bg-light">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Meet Me At The Bar (Contact)</h2>
+            <h2 class="section-title scroll-reveal">Haaaave You Met Anjali? (Contact)</h2>
             <div class="contact-wrapper scroll-reveal">
                 <div class="contact-details">
                     <a href="mailto:anjalijha2026@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> <span>anjalijha2026@gmail.com</span></a>
@@ -585,12 +585,14 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Anjali. MacLaren's Pub Edition <button class="easter-egg-btn" id="easter-egg">👔</button></p>
+            <p>&copy; <span id="year"></span> Anjali. Legendary Edition <button class="easter-egg-btn" id="easter-egg">👔</button></p>
         </div>
     </footer>
 
+    <!-- Legendary Toast Notification -->
     <div id="legendary-toast">It's gonna be LEGEN — wait for it — DARY!</div>
 
+    <!-- Project Details Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -603,7 +605,7 @@
     <script>
         const projectData = {
             merchantmirror: {
-                title: "MerchantMirror: AI-Powered Merchant Revenue Recovery",
+                title: "MerchantMirror: The One with Revenue Recovery",
                 tag: "Episode 1: AI Agents and Intelligent Payment Analytics",
                 link: "https://github.com/Anjali1630/MerchantMirror",
                 overview: "Developed an AI-powered revenue recovery platform that analyzes failed payments to identify merchant configuration issues before contacting customers. It combines statistical analysis with an automated recovery agent to recommend configuration fixes or simulate customer recovery actions.",
@@ -619,7 +621,7 @@
                 challenges: "Distinguishing configuration-related payment failures from customer-related failures. Addressed by using an explainable statistical attribution engine before routing unresolved cases to the recovery agent. All recovery actions are simulated rather than executed against real payments."
             },
             doorman: {
-                title: "Doorman: Intelligent Browser Automation Agent",
+                title: "Doorman: The One with the Intelligent Agent",
                 tag: "Episode 2: AI Agents and Browser Automation",
                 link: "https://github.com/Anjali1630/doorman",
                 overview: "Developed an intelligent browser automation agent that executes natural-language tasks by prioritizing available APIs and falling back to Playwright browser automation when necessary. It validates planned actions against the live webpage before execution to improve reliability and prevent interactions with nonexistent elements.",
@@ -636,7 +638,7 @@
                 challenges: "Making browser automation reliable when an AI-generated plan refers to elements that may not exist or when an API is unavailable. Addressed through live DOM validation, API availability checks and fallback planning."
             },
             netgraph: {
-                title: "NetGraph: Real-Time Network Intrusion Detection",
+                title: "NetGraph: The One with Network Intrusion Detection",
                 tag: "Episode 3: Graph Machine Learning and Cybersecurity",
                 link: "https://github.com/Anjali1630/NetGraph",
                 overview: "Developed a network intrusion detection system that represents network traffic as graphs, with devices as nodes and network flows as edges. Trained and evaluated Graph Neural Network models using the CIC-IDS2017 dataset to identify malicious traffic patterns and compared their performance with conventional machine learning approaches.",
@@ -653,7 +655,7 @@
                 challenges: "Transforming network flow records into meaningful graph structures while handling dataset inconsistencies, timestamp resolution and large-scale traffic data. Addressed through data-cleaning procedures, graph-window construction and evaluation using real CIC-IDS2017 traffic."
             },
             datasage: {
-                title: "Datasage: AI Conversational Analytics Platform",
+                title: "Datasage: The One with Conversational Analytics",
                 tag: "Episode 4: Full-Stack AI Engineering",
                 link: "https://github.com/Anjali1630/Datasage",
                 overview: "A full-stack AI analytics platform that enables users to query structured databases and unstructured documents using natural language. It determines whether queries require SQL, document retrieval, or hybrid search, running entirely on locally hosted LLMs via Ollama.",
@@ -667,22 +669,9 @@
                 technologies: ["Python", "FastAPI", "React", "Ollama", "PostgreSQL", "SQLite", "LangChain", "Docker"],
                 challenges: "Ensuring accurate data retrieval across diverse sources without relying on external cloud APIs. Solved by integrating locally hosted LLMs (Llama 3/Mistral/Qwen) through Ollama for complete privacy and offline accessibility."
             },
-            isro: {
-                title: "AI-Powered Air Quality Monitoring System",
-                tag: "Episode 5: ISRO Project / Intern Venture",
-                overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
-                architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
-                features: [
-                    "Developed a hybrid LSTM time-series forecasting engine parsing environmental metrics.",
-                    "Deployed physics-validated output configurations tracking local regulatory compliance indices.",
-                    "Supported operational mathematical migrations from PINN modeling to deterministic Chemical Transport Models (CTM)."
-                ],
-                technologies: ["Python", "LSTM (TensorFlow)", "ESP32-S3", "Edge Computing", "Chemical Transport Models", "PostgreSQL"],
-                challenges: "Improving structural simulation accuracies across changing atmospheric layers. Addressed by deploying advanced operator splitting mechanisms within the CTM runtime framework."
-            },
             paperpilot: {
-                title: "PaperPilot.ai",
-                tag: "Episode 6: Generative AI Engineering",
+                title: "PaperPilot.ai: The One with the RAG Assistant",
+                tag: "Episode 5: Generative AI Engineering",
                 link: "https://github.com/Anjali1630", 
                 overview: "Developed an advanced LLM-powered document assistant designed to help researchers and students seamlessly ingest, query, and extract insights from dense academic papers.",
                 architecture: "Constructed a highly efficient Retrieval-Augmented Generation (RAG) pipeline, linking vector embeddings to a custom FastAPI backend for rapid semantic search and contextual retrieval.",
@@ -695,8 +684,8 @@
                 challenges: "Processing extensive document contexts without breaching strict LLM token limits. Mitigated by engineering an optimized text-chunking and overlapping retrieval protocol."
             },
             argus: {
-                title: "Argus: AI-Powered Fraud Detection System",
-                tag: "Episode 7: Machine Learning Risk Platform",
+                title: "Argus: The One with Fraud Detection",
+                tag: "Episode 6: Machine Learning Risk Platform",
                 link: "https://github.com/Anjali1630",
                 overview: "Engineered an advanced anomaly tracking framework to process complex transaction sets and discover adversarial systemic financial fraud signatures.",
                 architecture: "Constructed with robust behavioral feature profiling tools paired alongside automated multi-tier information cleanup and ingestion frameworks.",
