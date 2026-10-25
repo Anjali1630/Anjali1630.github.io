@@ -9,14 +9,14 @@
     <style>
         /* HIMYM Color Palette: Cream, Navy Blue, Yellow, Warm Red */
         :root {
-            --bg-color: #FDFBF7; /* Cream */
-            --bg-light: #F4EEDD; /* Warm Cream */
-            --text-main: #1A2530; /* Navy Blue */
+            --bg-color: #FDFBF7;
+            --bg-light: #F4EEDD;
+            --text-main: #1A2530;
             --text-muted: #4A5568; 
-            --accent: #F2C94C; /* Yellow Umbrella */
+            --accent: #F2C94C;
             --accent-hover: #E3B734;
-            --secondary: #1F3C88; /* Deep Blue (French Horn) */
-            --danger: #C1121F; /* Warm Red / Pub Bricks */
+            --secondary: #1F3C88;
+            --danger: #C1121F;
             --shadow-sm: 0 2px 4px rgba(26, 37, 48, 0.05);
             --shadow-md: 0 8px 16px rgba(26, 37, 48, 0.1);
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -49,9 +49,7 @@
             padding: 0 24px;
         }
 
-        .section-padding {
-            padding: 80px 0;
-        }
+        .section-padding { padding: 80px 0; }
 
         .bg-light {
             background-color: var(--bg-light);
@@ -80,7 +78,6 @@
             border-radius: 2px;
         }
 
-        /* Playful references */
         .umbrella-icon { color: var(--accent); margin-right: 8px; font-size: 1.2rem; }
         .horn-icon { color: var(--secondary); margin-right: 8px; font-size: 1.2rem; }
 
@@ -99,311 +96,96 @@
             letter-spacing: 0.05em;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--text-main);
-            border: 2px solid var(--accent);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--bg-color);
-            border: 2px solid var(--accent);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--text-main);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 2px solid var(--text-main);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-            transform: translateY(-2px);
-        }
+        .btn-primary { background-color: var(--accent); color: var(--text-main); border: 2px solid var(--accent); box-shadow: var(--shadow-sm); }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-secondary { background-color: transparent; color: var(--bg-color); border: 2px solid var(--accent); }
+        .btn-secondary:hover { background-color: var(--accent); color: var(--text-main); transform: translateY(-2px); }
 
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             background-color: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 2px solid var(--accent);
-            z-index: 1000;
-            height: 70px;
-            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(12px); border-bottom: 2px solid var(--accent);
+            z-index: 1000; height: 70px; box-shadow: var(--shadow-sm);
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .logo { font-size: 1.4rem; font-weight: 900; text-decoration: none; color: var(--text-main); letter-spacing: -0.02em; }
+        .logo span { color: var(--accent); }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 900;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 24px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            transition: var(--transition);
-            position: relative;
-            padding: 6px 0;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--secondary);
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
+        .nav-links { display: flex; list-style: none; gap: 24px; }
+        .nav-link { text-decoration: none; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; transition: var(--transition); position: relative; padding: 6px 0; }
+        .nav-link:hover, .nav-link.active { color: var(--secondary); }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; background-color: var(--accent); border-radius: 2px; }
 
         .burger { display: none; cursor: pointer; }
         .burger div { width: 25px; height: 3px; background-color: var(--text-main); margin: 5px; transition: var(--transition); border-radius: 2px; }
 
-        /* MacLaren's Pub Vibe Hero Section */
         .hero {
-            padding-top: 140px;
-            padding-bottom: 80px;
+            padding-top: 140px; padding-bottom: 80px;
             background: linear-gradient(135deg, #1A2530 0%, #0F171E 100%);
-            color: var(--bg-color);
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid var(--accent);
+            color: var(--bg-color); position: relative; overflow: hidden; border-bottom: 4px solid var(--accent);
         }
-
-        /* Subtle cozy pub lighting effect */
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle at 50% 50%, rgba(242, 201, 76, 0.08) 0%, transparent 60%);
-            z-index: 0;
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(242, 201, 76, 0.08) 0%, transparent 60%); z-index: 0;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            letter-spacing: -0.04em;
-            margin-bottom: 12px;
-            line-height: 1.1;
-            color: var(--bg-color);
-        }
-        
+        .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; line-height: 1.1; color: var(--bg-color); }
         .hero h1 span { color: var(--accent); }
-
-        .hero h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--bg-light);
-            margin-bottom: 20px;
-            letter-spacing: 0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #A0AEC0;
-            margin-bottom: 30px;
-            max-width: 680px;
-        }
-
+        .hero h2 { font-size: 1.3rem; font-weight: 600; color: var(--bg-light); margin-bottom: 24px; letter-spacing: 0.02em; line-height: 1.4; }
+        .subtitle { font-size: 1.1rem; color: #A0AEC0; margin-bottom: 30px; max-width: 680px; }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
         .avatar-container { display: flex; justify-content: center; align-items: center; }
         .profile-avatar {
-            width: 280px; height: 280px;
-            border-radius: 8px;
-            border: 4px solid var(--accent);
-            object-fit: cover;
-            background-color: var(--bg-light);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-            transform: rotate(2deg);
-            transition: var(--transition);
+            width: 280px; height: 280px; border-radius: 8px; border: 4px solid var(--accent);
+            object-fit: cover; background-color: var(--bg-light); box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+            transform: rotate(2deg); transition: var(--transition);
         }
         .profile-avatar:hover { transform: rotate(0deg) scale(1.02); }
 
-        .about-grid {
-            background: #ffffff;
-            border-left: 4px solid var(--secondary);
-            padding: 40px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 16px;
-        }
-
+        .about-grid { background: #ffffff; border-left: 4px solid var(--secondary); padding: 40px; border-radius: 0 8px 8px 0; box-shadow: var(--shadow-sm); }
+        .about-text p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 16px; }
         .about-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
         .badge {
-            background-color: var(--secondary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            background-color: var(--secondary); padding: 8px 16px; border-radius: 4px;
+            font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ffffff; display: inline-flex; align-items: center; gap: 8px;
         }
         .badge i { color: var(--accent); }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .skills-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-top: 4px solid var(--danger);
-            padding: 24px;
-            border-radius: 6px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+        .skills-card { background: #ffffff; border: 1px solid var(--border-color); border-top: 4px solid var(--danger); padding: 24px; border-radius: 6px; box-shadow: var(--shadow-sm); transition: var(--transition); }
         .skills-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--danger); }
-
-        .skills-card h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-main);
-            font-weight: 800;
-        }
+        .skills-card h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 800; }
         .skills-card h3 i { color: var(--danger); }
-
         .skills-card ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-        .skills-card li {
-            background: var(--bg-light);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
+        .skills-card li { background: var(--bg-light); padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; color: var(--text-main); border: 1px solid var(--border-color); }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 30px;
-        }
-
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
         .project-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: var(--transition);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px;
+            transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
         }
-
-        .project-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background-color: var(--accent); transition: var(--transition); transform: scaleX(0); transform-origin: left;
-        }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background-color: var(--accent); transition: var(--transition); transform: scaleX(0); transform-origin: left; }
         .project-card:hover::before { transform: scaleX(1); }
         .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-
         .project-card.featured-card { border: 2px solid var(--secondary); }
-        .featured-badge {
-            position: absolute; top: 16px; right: 16px; background: var(--secondary); color: white; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.05em;
-        }
-
+        .featured-badge { position: absolute; top: 16px; right: 16px; background: var(--secondary); color: white; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.05em; }
         .project-info { padding: 30px; }
-        .project-tag {
-            font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--danger); display: inline-block; margin-bottom: 12px;
-        }
-        .project-card h3 { font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; line-height: 1.3; color: var(--text-main); }
+        .project-tag { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--danger); display: inline-block; margin-bottom: 12px; }
+        .project-card h3 { font-size: 1.25rem; margin-bottom: 10px; font-weight: 800; line-height: 1.3; color: var(--text-main); }
         .project-brief { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; }
-        
-        .view-more {
-            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: var(--secondary); display: inline-flex; align-items: center; gap: 8px;
-        }
+        .view-more { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; color: var(--secondary); display: inline-flex; align-items: center; gap: 8px; }
         .project-card:hover .view-more { color: var(--accent-hover); }
 
         .timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 30px; }
         .timeline::before { content: ''; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background-color: var(--accent); opacity: 0.5; }
         .timeline-item { position: relative; margin-bottom: 40px; }
-        
-        .timeline-dot {
-            position: absolute; left: -36px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--accent); border: 3px solid var(--bg-color); box-shadow: 0 0 0 2px var(--accent); transition: var(--transition);
-        }
+        .timeline-dot { position: absolute; left: -36px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--accent); border: 3px solid var(--bg-color); box-shadow: 0 0 0 2px var(--accent); transition: var(--transition); }
         .timeline-item:hover .timeline-dot { background-color: var(--danger); box-shadow: 0 0 0 2px var(--danger); }
-
         .timeline-date { font-size: 0.85rem; font-weight: 800; color: var(--secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .timeline-content {
-            background: #ffffff; padding: 24px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: var(--transition);
-        }
+        .timeline-content { background: #ffffff; padding: 24px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: var(--transition); }
         .timeline-item:hover .timeline-content { border-color: var(--secondary); }
         .timeline-content h3 { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
         .company { font-weight: 700; color: var(--danger); margin-bottom: 12px; font-size: 0.95rem; }
@@ -441,7 +223,7 @@
         .close-modal:hover { color: var(--danger); }
         
         .modal-body h2 { font-size: 1.8rem; margin-bottom: 8px; font-weight: 900; color: var(--text-main); line-height: 1.2; }
-        .modal-body .modal-tag { color: var(--accent-hover); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 24px; display: inline-block; letter-spacing: 0.05em; background: var(--bg-main); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-color);}
+        .modal-body .modal-tag { color: var(--accent-hover); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 24px; display: inline-block; letter-spacing: 0.05em; background: var(--bg-light); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-color);}
         .modal-section { margin-bottom: 24px; }
         .modal-section h4 { font-size: 1rem; font-weight: 800; text-transform: uppercase; color: var(--secondary); margin-bottom: 8px; letter-spacing: 0.05em; }
         .modal-section p, .modal-section ul { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
@@ -455,11 +237,19 @@
         .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* Easter Egg Toast Notification */
+        /* Fixed Easter Egg Toast Notification - Mobile Friendly */
         #legendary-toast {
-            position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background-color: var(--text-main); color: var(--accent); padding: 20px 40px; border-radius: 8px; font-size: 1.5rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid var(--accent); z-index: 3000; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: fixed; bottom: -150px; left: 50%; transform: translateX(-50%); 
+            background-color: var(--text-main); color: var(--accent); 
+            padding: 16px 32px; border-radius: 8px; 
+            font-size: 1.2rem; font-weight: 900; letter-spacing: 0.1em; 
+            text-transform: uppercase; box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            border: 2px solid var(--accent); z-index: 3000; 
+            transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            white-space: normal; text-align: center; width: max-content; max-width: 90vw;
+            visibility: hidden; opacity: 0; pointer-events: none;
         }
-        #legendary-toast.show { bottom: 40px; }
+        #legendary-toast.show { bottom: 40px; visibility: visible; opacity: 1; pointer-events: auto; }
 
         @media (max-width: 992px) { 
             .projects-grid { grid-template-columns: 1fr; }
@@ -479,6 +269,7 @@
             .hero h1 { font-size: 2.4rem; }
             .hero h2 { font-size: 1.2rem; }
             .section-padding { padding: 60px 0; }
+            #legendary-toast { font-size: 1rem; padding: 12px 20px; }
         }
     </style>
 </head>
@@ -489,12 +280,12 @@
             <a href="#home" class="logo">Anjali<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">The Story</a></li>
-                <li><a href="#skills" class="nav-link">Arsenal</a></li>
-                <li><a href="#projects" class="nav-link">The Playbook</a></li>
-                <li><a href="#experience" class="nav-link">Timeline</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#leadership" class="nav-link">Leadership</a></li>
-                <li><a href="#certifications" class="nav-link">Certs</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -511,13 +302,14 @@
             <div class="hero-grid scroll-reveal">
                 <div class="hero-text">
                     <h1>Hi, I'm <span>Anjali</span>.</h1>
+                    <h2 style="font-size: 1.6rem; color: var(--bg-color); line-height: 1.2; margin-bottom: 5px;">Suit up for some intelligent ideas.</h2>
                     <h2>AI & Machine Learning Undergraduate <i class="fa-solid fa-umbrella" style="color: var(--accent); margin-left:8px;"></i></h2>
-                    <p class="subtitle">I am an AI & Machine Learning intern with a CGPA of 8.0. I design and deploy end-to-end predictive pipelines, self-correcting automation logic, and hardware-integrated data intelligence systems. Challenge Accepted.</p>
+                    <p class="subtitle">I'm building my story at the intersection of AI, data, and problem-solving. From intelligent automation to predictive analytics, I enjoy turning messy problems into meaningful solutions.<br><br>Aspiring AI Engineer, Data Analyst, and Business Analyst — currently collecting skills, building projects, and figuring out what makes technology truly useful.<br><br><em style="color: var(--accent);">Because great ideas deserve a legendary execution.</em></p>
                     <div class="hero-buttons">
-                        <a href="Anjaliresume.pdf" download="Anjali_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Suit Up (Resume)</a>
+                        <a href="Anjaliresume.pdf" download="Anjali_Resume.pdf" class="btn btn-primary"><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
                         <a href="https://github.com/Anjali1630" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/anjali-%E2%80%8E-18b0a4188" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href="#contact" class="btn btn-secondary">Meet Me</a>
+                        <a href="#contact" class="btn btn-secondary">Connect</a>
                     </div>
                 </div>
                 <div class="avatar-container">
@@ -529,16 +321,18 @@
 
     <section id="about" class="about section-padding">
         <div class="container">
-            <h2 class="section-title scroll-reveal"><i class="fa-solid fa-book-open horn-icon"></i> The Story of How I Became an AI Engineer</h2>
+            <h2 class="section-title scroll-reveal"><i class="fa-solid fa-book-open horn-icon"></i> The Story Behind the Code</h2>
             <div class="about-grid scroll-reveal">
                 <div class="about-text">
-                    <p>I am an Artificial Intelligence & Machine Learning undergraduate passionate about building intelligent systems that solve real-world problems through data, algorithms, and automation. My interests span machine learning, deep learning, predictive analytics, natural language processing, recommendation systems, and intelligent software development.</p>
-                    <p>I enjoy transforming complex datasets into meaningful insights and developing scalable solutions that combine analytical thinking with practical engineering. Through academic and personal projects, I have gained experience in designing machine learning models, developing AI-powered applications, and building end-to-end software systems.</p>
-                    <p>I am continuously exploring emerging technologies in AI and data science while strengthening my problem-solving, research, and software engineering skills to create impactful and innovative solutions.</p>
+                    <p>I'm an Artificial Intelligence & Machine Learning undergraduate who enjoys exploring how technology, data, and business thinking can come together to solve real-world problems.</p>
+                    <p>Like every good HIMYM episode, every project starts with a question. I enjoy following that question through data analysis, predictive modelling, intelligent automation, and AI-powered applications — learning something new with every iteration.</p>
+                    <p>My interests span AI engineering, machine learning, data analytics, business intelligence, and translating technical insights into practical decisions. I enjoy both the <em>how</em> behind a system and the <em>why</em> behind the problem it solves.</p>
+                    <p>I'm continuously building my skills through hands-on projects, experimenting with new technologies, and learning to connect analytical thinking with real-world impact.</p>
+                    <p><strong>Current chapter:</strong> Building smarter solutions, one project at a time. The story is still unfolding.</p>
                     <div class="about-badges">
-                        <span class="badge"><i class="fa-solid fa-rocket"></i> ISRO Contributor</span>
-                        <span class="badge"><i class="fa-solid fa-brain"></i> Predictive Modeling</span>
-                        <span class="badge"><i class="fa-solid fa-code-branch"></i> Scalable Solutions</span>
+                        <span class="badge"><i class="fa-solid fa-brain"></i> AI & Intelligent Systems</span>
+                        <span class="badge"><i class="fa-solid fa-chart-pie"></i> Data & Business Insights</span>
+                        <span class="badge"><i class="fa-solid fa-lightbulb"></i> Automation & Problem-Solving</span>
                     </div>
                 </div>
             </div>
@@ -598,7 +392,7 @@
                     <span class="featured-badge">Revenue Recovery</span>
                     <div class="project-info">
                         <span class="project-tag">Episode 1: AI Agents</span>
-                        <h3>The One with Merchant Revenue Recovery</h3>
+                        <h3>MerchantMirror: The One with Revenue Recovery</h3>
                         <p class="project-brief">An AI-powered revenue recovery platform that analyzes failed payments to identify merchant configuration issues before contacting customers.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -607,7 +401,7 @@
                 <div class="project-card scroll-reveal" data-project="doorman">
                     <div class="project-info">
                         <span class="project-tag">Episode 2: Browser Automation</span>
-                        <h3>The One with the Intelligent Agent (Doorman)</h3>
+                        <h3>Doorman: The One with the Intelligent Agent</h3>
                         <p class="project-brief">An intelligent browser automation agent that executes natural-language tasks by prioritizing available APIs and falling back to Playwright.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -616,7 +410,7 @@
                 <div class="project-card scroll-reveal" data-project="netgraph">
                     <div class="project-info">
                         <span class="project-tag">Episode 3: Cybersecurity</span>
-                        <h3>The One with Network Intrusion Detection</h3>
+                        <h3>NetGraph: The One with Network Intrusion Detection</h3>
                         <p class="project-brief">A network intrusion detection system representing network traffic as graphs, evaluated using Graph Neural Network models.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -625,7 +419,7 @@
                 <div class="project-card scroll-reveal" data-project="datasage">
                     <div class="project-info">
                         <span class="project-tag">Episode 4: Full-Stack AI</span>
-                        <h3>The One with Conversational Analytics</h3>
+                        <h3>Datasage: The One with Conversational Analytics</h3>
                         <p class="project-brief">A full-stack analytics platform that queries structured databases and documents using natural language and local LLMs.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -634,7 +428,7 @@
                 <div class="project-card scroll-reveal" data-project="isro">
                     <div class="project-info">
                         <span class="project-tag">Episode 5: Edge Computing</span>
-                        <h3>The One with the ISRO Pipeline</h3>
+                        <h3>ISRO Pipeline: The One with Air Quality Monitoring</h3>
                         <p class="project-brief">An edge-integrated LSTM forecasting pipeline built to monitor multi-variate environmental datasets.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -643,7 +437,7 @@
                 <div class="project-card scroll-reveal" data-project="paperpilot">
                    <div class="project-info">
                         <span class="project-tag">Episode 6: RAG Systems</span>
-                        <h3>The One with the RAG Assistant</h3>
+                        <h3>PaperPilot.ai: The One with the RAG Assistant</h3>
                         <p class="project-brief">An intelligent document analysis platform utilizing Retrieval-Augmented Generation (RAG) to dynamically query academic papers.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -652,7 +446,7 @@
                 <div class="project-card scroll-reveal" data-project="argus">
                     <div class="project-info">
                         <span class="project-tag">Episode 7: Anomaly Detection</span>
-                        <h3>The One with Fraud Detection</h3>
+                        <h3>Argus: The One with Fraud Detection</h3>
                         <p class="project-brief">Advanced financial classification architecture engineered around transaction validation logs.</p>
                         <span class="view-more">View Episode Details <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
@@ -672,13 +466,13 @@
                     <div class="timeline-date">July 2026 – October 2026</div>
                     <div class="timeline-content">
                         <h3>AI Intern</h3>
-                        <h4 class="company">The Entrepreneurship Network (Remote)</h4>
+                        <h4 class="company">The Entrepreneurship Network</h4>
                         <ul>
-                            <li>Architected and shipped production-grade AI systems, including a Dockerized Text-to-SQL conversational analytics engine using Ollama.</li>
-                            <li>Developed a full-stack React and FastAPI app with a pluggable abstraction for unified PostgreSQL and SQLite integration.</li>
-                            <li>Built a dynamic schema-discovery system for runtime introspection of CSV/XLSX file uploads.</li>
-                            <li>Designed a hybrid classifier routing user queries to Text-to-SQL, vector search, or dual-execution workflows.</li>
+                            <li>Worked on five AI projects under Scrum Master guidance, spanning analytics, AI security, automation, and intelligent applications.</li>
+                            <li>Applied AI and analytical techniques across natural-language-to-SQL, LLM security testing, intelligent browser automation, graph neural networks, and semantic search.</li>
+                            <li>Strengthened practical skills in AI system development, data workflows, problem-solving, and cross-functional communication.</li>
                         </ul>
+                        <p style="margin-top: 10px; font-style: italic; color: var(--accent); font-weight: bold;">Five projects. One legendary learning curve.</p>
                     </div>
                 </div>
                 
@@ -686,9 +480,16 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">Nov 2025 – July 2026</div>
                     <div class="timeline-content">
-                        <h3>System Engineer & Data Analyst Intern</h3>
-                        <h4 class="company">ISRO (Indian Space Research Organisation)</h4>
-                        <p>Contributing directly within an engineering development team to build predictive edge-monitoring data platforms and time-series pipelines. Deployed operational Chemical Transport Models (CTM) using operator splitting matrices to secure optimization benchmarks.</p>
+                        <h3>Air Quality Monitoring System (AQMS)</h3>
+                        <h4 class="company">IoT · Edge AI · Data Analytics</h4>
+                        <ul>
+                            <li>Worked on an IoT-based air quality monitoring system integrating sensors, edge computing, and cloud analytics.</li>
+                            <li>Explored system architecture using ESP32, Raspberry Pi, and AWS microservices for real-time environmental data processing.</li>
+                            <li>Worked with air quality data and a hybrid CNN-LSTM model for time-series forecasting.</li>
+                            <li>Explored end-to-end data flow from sensor collection to cloud-based analytics, targeting telemetry delays below five seconds.</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-weight: 600; font-size: 0.9rem; color: var(--text-main);">Key Skills: Data Analysis · System Architecture · IoT · Edge AI · Predictive Analytics</p>
+                        <p style="margin-top: 5px; font-style: italic; color: var(--accent); font-weight: bold;">Every data point tells a story.</p>
                     </div>
                 </div>
 
@@ -798,7 +599,7 @@
 
     <section id="contact" class="contact section-padding bg-light">
         <div class="container">
-            <h2 class="section-title scroll-reveal">Meet Me At The Bar (Contact)</h2>
+            <h2 class="section-title scroll-reveal">Haaaave You Met Anjali? (Contact)</h2>
             <div class="contact-wrapper scroll-reveal">
                 <div class="contact-details">
                     <a href="mailto:anjalijha2026@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> <span>anjalijha2026@gmail.com</span></a>
@@ -811,7 +612,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Anjali. MacLaren's Pub Edition <button class="easter-egg-btn" id="easter-egg">👔</button></p>
+            <p>&copy; <span id="year"></span> Anjali. Legendary Edition <button class="easter-egg-btn" id="easter-egg">👔</button></p>
         </div>
     </footer>
 
@@ -897,16 +698,16 @@
             },
             isro: {
                 title: "AI-Powered Air Quality Monitoring System",
-                tag: "Episode 5: ISRO Project / Intern Venture",
-                overview: "Contributed directly as a System Engineer and Data Analyst Intern on a team-based edge-computing air quality monitoring framework for the Indian Space Research Organisation (ISRO).",
-                architecture: "Integrated hardware layers using ESP32-S3 edge devices communicating via structural I2C and UART bridges to provide robust, non-blocking real-time sensor data ingestion paths straight into the processing infrastructure.",
+                tag: "Episode 5: Edge AI Data Analytics",
+                overview: "Contributed to an IoT-based edge-computing air quality monitoring framework.",
+                architecture: "Integrated hardware layers using ESP32-S3 and Raspberry Pi edge devices communicating via structural I2C and UART bridges to provide robust real-time sensor data ingestion into AWS cloud microservices.",
                 features: [
-                    "Developed a hybrid LSTM time-series forecasting engine parsing environmental metrics.",
-                    "Deployed physics-validated output configurations tracking local regulatory compliance indices.",
-                    "Supported operational mathematical migrations from PINN modeling to deterministic Chemical Transport Models (CTM)."
+                    "Developed a hybrid CNN-LSTM time-series forecasting engine parsing environmental metrics.",
+                    "Explored real-time end-to-end data flow targeting telemetry delays below five seconds.",
+                    "Supported operational evaluations using telemetry and environmental datasets."
                 ],
-                technologies: ["Python", "LSTM (TensorFlow)", "ESP32-S3", "Edge Computing", "Chemical Transport Models", "PostgreSQL"],
-                challenges: "Improving structural simulation accuracies across changing atmospheric layers. Addressed by deploying advanced operator splitting mechanisms within the CTM runtime framework."
+                technologies: ["Python", "LSTM", "CNN", "ESP32", "Raspberry Pi", "AWS", "IoT"],
+                challenges: "Handling real-time data ingestion while avoiding major telemetry delays. Addressed by optimizing the data processing flows across edge nodes."
             },
             paperpilot: {
                 title: "PaperPilot.ai",
@@ -939,7 +740,6 @@
         };
 
         document.addEventListener("DOMContentLoaded", () => {
-            // Mobile Menu
             const burger = document.querySelector(".burger");
             const navLinksContainer = document.querySelector(".nav-links");
             const navLinks = document.querySelectorAll(".nav-link");
@@ -956,49 +756,48 @@
                 });
             });
 
-            // Active Link & Back to Top behavior
-            const sections = document.querySelectorAll("section");
-            const bttBtn = document.getElementById("backToTop");
-            
-            window.addEventListener("scroll", () => {
-                let currentSectionId = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.pageYOffset >= (sectionTop - 150)) {
-                        currentSectionId = section.getAttribute("id");
+            // Intersection Observer for scroll animations (replaces heavy scroll listener)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
+            }, { threshold: 0.1 });
 
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${currentSectionId}`) {
-                        link.classList.add("active");
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+            // Intersection Observer for active nav links
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
                     }
                 });
+            }, { rootMargin: "-150px 0px -50% 0px" });
 
+            document.querySelectorAll('section').forEach(sec => sectionObserver.observe(sec));
+
+            // Throttled scroll for Back to Top
+            window.addEventListener('scroll', () => {
+                const bttBtn = document.getElementById("backToTop");
                 if (window.pageYOffset > 300) {
                     bttBtn.style.display = "block";
                 } else {
                     bttBtn.style.display = "none";
                 }
-            });
+            }, { passive: true });
 
+            bttBtn = document.getElementById("backToTop");
             bttBtn.addEventListener("click", () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-
-            // Scroll Reveal Animation
-            const revealElements = document.querySelectorAll(".scroll-reveal");
-            const revealOnScroll = () => {
-                revealElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    if (elementTop < window.innerHeight - 75) {
-                        element.classList.add("visible");
-                    }
-                });
-            };
-            window.addEventListener("scroll", revealOnScroll);
-            revealOnScroll();
 
             // Project Modal Logic
             const modal = document.getElementById("project-modal");
